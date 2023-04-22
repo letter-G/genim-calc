@@ -1,0 +1,979 @@
+<!DOCTYPE HTML>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="icon" href="resources/webpage/logo.png">
+        <title>Genim Calculator | 3.2.1</title>
+        <link rel="stylesheet" href="default.css">
+        <link rel="stylesheet" href="talents.css">
+    </head>
+    <body>
+        <a href="index.html"><div class="crumbBox">
+            <span class="logoTitle">Genim <img class="logoIcon" src="resources/webpage/logo.png" alt="Logo"> Calculator</span>
+        </div></a>
+        <div class="navBar">
+            <div class="navBox">
+                <span class="navDivider">| </span>
+                <button type="button" class="navCurrent">Talents</button>
+                <span class="navDivider"> | </span>
+                <button type="button" class="navButton">Ascension</button>
+                <span class="navDivider"> | </span>
+                <button type="button" class="navButton">Resin</button>
+                <span class="navDivider"> |</span>
+            </div>
+        </div>
+        <div class="choiceOverlay"id="charChangeOverlay"></div>
+            <div class="choiceBox" id="charChangeBox">
+                <div class="functionBox">
+                    <div class="backButtonBox">
+                        <button type="button" class="backButton" id="closeCharChooser" onclick="closeChangeBox()"> X </button>
+                        <script>
+                            function closeChangeBox(){
+                                document.getElementById('charChangeOverlay').style.display = 'none';
+                                document.getElementById('charChangeBox').style.display = 'none';
+                                document.getElementById('openCharSearch').style.transform = 'rotate(90deg)';
+                                document.getElementById('openCharSearch').style.opacity = '1';
+                            }
+                        </script>
+                    </div>
+                    <div class="charSearchBox">
+                        <input type="search" class="charSearch" id="charSearchFilter" oninput="charFilter()">
+                        <script>
+                            function charFilter() {
+                                let charDisp = document.querySelectorAll('.charDisplay');
+                                let valIn = document.getElementById('charSearchFilter').value;
+                                let searchQueryA = valIn.charAt(0).toUpperCase();
+                                let searchQueryB = valIn.substr(1).toLowerCase();
+                                let searchQuery = searchQueryA + searchQueryB;
+                                for (var n = 0; n < charDisp.length; n++) {
+                                    if(charDisp[n].id.includes(searchQuery)) {
+                                        charDisp[n].classList.remove("is-lowlighted");
+                                    } else {
+                                       charDisp[n].classList.add("is-lowlighted");
+                                    }
+                                }
+                            }
+                        </script>
+                    </div>
+                </div>
+                <div class="charDisplayBox" id="charDBox">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Aether, Male Traveler" alt="Aether" src="resources/Characters/aether-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Lumine, Female Traveler" alt="Lumine" src="resources/Characters/lumine-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Albedo" alt="Albedo" src="resources/Characters/albedo-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Aloy" alt="Aloy" src="resources/Characters/aloy-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Kamisato Ayaka" alt="Ayaka" src="resources/Characters/ayaka-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Kamisato Ayato" alt="Ayato" src="resources/Characters/ayato-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Cyno" alt="Cyno" src="resources/Characters/cyno-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Diluc, Diluc Ragvindr" alt="Diluc" src="resources/Characters/diluc-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Eula, Eula Lawrence" alt="Eula" src="resources/Characters/eula-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Ganyu" alt="Ganyu" src="resources/Characters/ganyu-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Hutao" alt="Hutao" src="resources/Characters/hutao-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Arataki Itto" alt="Itto" src="resources/Characters/itto-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Jean, Jean Gunnhildr" alt="Jean" src="resources/Characters/jean-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Kaedehara Kazuha" alt="Kazuha" src="resources/Characters/kazuha-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Keqing" alt="Keqing" src="resources/Characters/keqing-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Klee" alt="Klee" src="resources/Characters/klee-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Sangonomiya Kokomi" alt="Kokomi" src="resources/Characters/kokomi-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Mona" alt="Mona" src="resources/Characters/mona-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Nahida, Lesser Lord Kusanali, Kusanali" alt="Nahida" src="resources/Characters/nahida-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Nilou" alt="Nilou" src="resources/Characters/nilou-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Qiqi" alt="Qiqi" src="resources/Characters/qiqi-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Raiden Shogun, Raiden Ei, Beelzebul, Baal, Almighty Narukami Ogosho" alt="Raiden" src="resources/Characters/raiden-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Shenhe" alt="Shenhe" src="resources/Characters/shenhe-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Tartaglia, Childe" alt="Tartaglia" src="resources/Characters/tartaglia-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Tighnari" alt="Tighnari" src="resources/Characters/tighnari-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Venti, Barbatos" alt="Venti" src="resources/Characters/venti-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Xiao" alt="Xiao" src="resources/Characters/xiao-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Yae Miko" alt="Yae" src="resources/Characters/yae-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Yelan" alt="Yelan" src="resources/Characters/yelan-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Yoimiya, Naganohara Yoimiya" alt="Yoimiya" src="resources/Characters/yoimiya-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Zhongli, Rex Lapis, Morax" alt="Zhongli" src="resources/Characters/zhongli-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Amber" alt="Amber" src="resources/Characters/amber-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Barbara, Barbara Pegg" alt="Barbara" src="resources/Characters/barbara-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Beidou" alt="Beidou" src="resources/Characters/beidou-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Bennett" alt="Bennett" src="resources/Characters/bennett-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Candace" alt="Candace" src="resources/Characters/candace-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Chongyun" alt="Chongyun" src="resources/Characters/chongyun-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Collei" alt="Collei" src="resources/Characters/collei-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Diona" alt="Diona" src="resources/Characters/diona-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Dori" alt="Dori" src="resources/Characters/dori-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Fischl, Amy, Prinzessin der Verurteilung" alt="Fischl" src="resources/Characters/fischl-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Gorou" alt="Gorou" src="resources/Characters/gorou-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Shikanoin Heizou" alt="Heizou" src="resources/Characters/heizou-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Kaeya, Kaeya Ragvindr" alt="Kaeya" src="resources/Characters/kaeya-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Lisa" alt="Lisa" src="resources/Characters/lisa-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Ningguang" alt="Ningguang" src="resources/Characters/ningguang-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Noelle" alt="Noelle" src="resources/Characters/noelle-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Razor" alt="Razor" src="resources/Characters/razor-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Rosaria" alt="Rosaria" src="resources/Characters/rosaria-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Kujou Sara" alt="Sara" src="resources/Characters/sara-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Sayu" alt="Sayu" src="resources/Characters/sayu-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Kuki Shinobu" alt="Shinobu" src="resources/Characters/shinobu-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Sucrose" alt="Sucrose" src="resources/Characters/sucrose-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Thoma" alt="Thoma" src="resources/Characters/thoma-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Xiangling" alt="Xiangling" src="resources/Characters/xiangling-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Xingqiu" alt="Xingqiu" src="resources/Characters/xingqiu-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Xinyan" alt="Xinyan" src="resources/Characters/xinyan-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Yanfei" alt="Yanfei" src="resources/Characters/yanfei-portrait.webp">
+                    <img class="charDisplay" onclick="replaceChar(this)" id="Yunjin" alt="Yunjin" src="resources/Characters/yunjin-portrait.webp">
+                    <script>
+                        function replaceChar(target) {
+                            let pyroList = 'Diluc, Hutao, Klee, Yoimiya, Amber, Bennett, Thoma, Xiangling, Xinyan, Yanfei';
+                            let pyroIn = pyroList.split(', ');
+                            let hydroList = 'Ayato, Mona, Nilou, Kokomi, Tartaglia, Yelan, Barbara, Candace, Xingqiu';
+                            let hydroIn = hydroList.split(', ');
+                            let anemoList = 'Jean, Kazuha, Venti, Xiao, Sayu, Heizou, Sucrose';
+                            let anemoIn = anemoList.split(', ');
+                            let electroList = 'Cyno, Keqing, Raiden, Yae, Beidou, Dori, Fischl, Sara, Shinobu, Lisa, Razor';
+                            let electroIn = electroList.split(', ');
+                            let dendroList = 'Aether, Lumine, Nahida, Tighnari, Collei';
+                            let dendroIn = dendroList.split(', ');
+                            let cryoList = 'Aloy, Eula, Ganyu, Ayaka, Qiqi, Shenhe, Chongyun, Diona, Kaeya, Layla, Rosaria';
+                            let cryoIn = cryoList.split(', ');
+                            let geoList = 'Albedo, Itto, Zhongli, Gorou, Ningguang, Noelle, Yunjin';
+                            let geoIn = geoList.split(', ');
+                            var oldElementSource = document.getElementById('imgElement').src;
+                            var elementSourceStart = oldElementSource.substr(31, 10); 
+                            var elementSourceFolder = 'Elements/';
+                            
+                            var nickChar = target.alt;
+                            for (elementConfirmed = 0; elementConfirmed != 1;) {
+                                for (var n = 0; n < pyroIn.length; n++) {
+                                    if(pyroIn[n].includes(nickChar)) {
+                                        var elementSourceName = 'pyro.webp';
+                                        var elementSource = elementSourceStart + elementSourceFolder + elementSourceName;
+                                        document.getElementById('imgElement').src = elementSource;
+                                        elementConfirmed = 1;
+                                    }
+                                }
+                                for (var n = 0; n < hydroIn.length; n++) {  
+                                    if(hydroIn[n].includes(nickChar)) {
+                                        var elementSourceName = 'hydro.webp';
+                                        var elementSource = elementSourceStart + elementSourceFolder + elementSourceName;
+                                        document.getElementById('imgElement').src = elementSource;
+                                        elementConfirmed = 1;
+                                    } 
+                                }
+                                for (var n = 0; n < anemoIn.length; n++) {    
+                                    if(anemoIn[n].includes(nickChar)) {
+                                        var elementSourceName = 'anemo.webp';
+                                        var elementSource = elementSourceStart + elementSourceFolder + elementSourceName;
+                                        document.getElementById('imgElement').src = elementSource;
+                                        elementConfirmed = 1;
+                                    } 
+                                }
+                                for (var n = 0; n < electroIn.length; n++) {   
+                                    if(electroIn[n].includes(nickChar)) {
+                                        var elementSourceName = 'electro.webp';
+                                        var elementSource = elementSourceStart + elementSourceFolder + elementSourceName;
+                                        document.getElementById('imgElement').src = elementSource;
+                                        elementConfirmed = 1;
+                                    } 
+                                }
+                                for (var n = 0; n < dendroIn.length; n++) {    
+                                    if(dendroIn[n].includes(nickChar)) {
+                                        var elementSourceName = 'dendro.webp';
+                                        var elementSource = elementSourceStart + elementSourceFolder + elementSourceName;
+                                        document.getElementById('imgElement').src = elementSource;
+                                        elementConfirmed = 1;
+                                    } 
+                                }
+                                for (var n = 0; n < cryoIn.length; n++) {    
+                                    if(cryoIn[n].includes(nickChar)) {
+                                        var elementSourceName = 'cryo.webp';
+                                        var elementSource = elementSourceStart + elementSourceFolder + elementSourceName;
+                                        document.getElementById('imgElement').src = elementSource;
+                                        elementConfirmed = 1;
+                                    } 
+                                }
+                                for (var n = 0; n < geoIn.length; n++) {   
+                                    if(geoIn[n].includes(nickChar)) {
+                                        var elementSourceName = 'geo.webp';
+                                        var elementSource = elementSourceStart + elementSourceFolder + elementSourceName;
+                                        document.getElementById('imgElement').src = elementSource;
+                                        elementConfirmed = 1;
+                                    }
+                                }
+                            }
+                            let idIn = target.id.split(', ');
+                            let nameChar = idIn[0];
+                            document.getElementById('charName').textContent = nameChar;
+
+                            let oldCharSource = target.src;
+                            let charSourceStart = oldCharSource.substr(31, 10);
+                            let charSourceTypeChar = 'Characters/';
+                            var charSourceName = target.alt.toLowerCase();
+                            let charSourceImageTypeCard = '-card.webp';
+                            let charSourceImage = charSourceStart + charSourceTypeChar + charSourceName + charSourceImageTypeCard;
+							document.getElementById('charImage').src = charSourceImage;
+                            
+                            let charSourceTypeTal = 'Talents/';
+                            if (nameChar == 'Aether' || nameChar == 'Lumine') {
+                                let charTraveler = 'Traveler';
+                                charSourceName = charTraveler.toLowerCase();
+                                var charSourceImageTypeNormal = '-dendro-normal.webp';                        
+                                var charSourceImageTypeSkill = '-dendro-skill.webp';
+                                var charSourceImageTypeBurst = '-dendro-burst.webp';
+                                document.getElementById('elementVision').disabled = 0;
+                                document.getElementById('elementVision').style.cursor = 'pointer';
+                            } else {
+                                var charSourceImageTypeNormal = '-normal.webp';                        
+                                var charSourceImageTypeSkill = '-skill.webp';
+                                var charSourceImageTypeBurst = '-burst.webp';
+                                document.getElementById('elementVision').disabled = 1;
+                                document.getElementById('elementVision').style.cursor = 'auto';
+                            }
+                            let charSourceNormal = charSourceStart + charSourceTypeTal + charSourceName + charSourceImageTypeNormal;
+                            let charSourceSkill = charSourceStart + charSourceTypeTal + charSourceName + charSourceImageTypeSkill;
+                            let charSourceBurst = charSourceStart + charSourceTypeTal + charSourceName + charSourceImageTypeBurst;
+                            
+                            document.getElementById('talentsNormal').src = charSourceNormal;
+                            document.getElementById('talentsSkill').src = charSourceSkill;
+                            document.getElementById('talentsBurst').src = charSourceBurst;
+
+                            let freedomList = 'Aloy, Klee, Tartaglia, Amber, Barbara, Diona, Sucrose'
+                            let freedomIn = freedomList.split(', ');
+                            let resistanceList = 'Diluc, Eula, Jean, Mona, Bennett, Noelle, Razor';
+                            let resistanceIn = resistanceList.split(', ');
+                            let balladList = 'Albedo, Venti, Fishcl, Kaeya, Lisa, Rosaria';
+                            let balladIn = balladList.split(', ');
+                            let prosperityList = 'Keqing, Qiqi, Shenhe, Xiao, Yelan, Ningguang';
+                            let prosperityIn = prosperityList.split(', ');
+                            let diligenceList = 'Ganyu, Hutao, Kazuha, Chongyun, Xiangling, Yunjin';
+                            let diligenceIn = diligenceList.split(', ');
+                            let goldList = 'Zhongli, Beidou, Xingqiu, Xinyan, Yanfei';
+                            let goldIn = goldList.split(', ');
+                            let transienceList = 'Kokomi, Yoimiya, Heizou, Thoma';
+                            let transienceIn = transienceList.split(', ');
+                            let eleganceList = 'Itto, Ayaka, Ayato, Sara, Shinobu';
+                            let eleganceIn = eleganceList.split(', ');
+                            let lightList = 'Raiden, Yae, Gorou, Sayu';
+                            let lightIn = lightList.split(', ');
+                            let admonitionList = 'Cyno, Tighnari, Candace';
+                            let admonitionIn = admonitionList.split(',' );
+                            let ingenuityList = 'Nahida, Dori, Layla';
+                            let ingenuityIn = ingenuityList.split(', ');
+                            let praxisList = 'Nilou, Collei';
+                            let praxisIn = praxisList.split(', ');
+
+                            var currentPhilosophies1 = document.getElementById('inPhilosophies1').className;
+                            var currentGuides1 = document.getElementById('inGuides1').className;
+                            var currentTeachings1 = document.getElementById('inTeachings1').className;
+
+                            var currentPhilosophies2 = document.getElementById('inPhilosophies2').className;
+                            var currentGuides2 = document.getElementById('inGuides2').className;
+                            var currentTeachings2 = document.getElementById('inTeachings2').className;
+
+                            var currentPhilosophies3 = document.getElementById('inPhilosophies3').className;
+                            var currentGuides3 = document.getElementById('inGuides3').className;
+                            var currentTeachings3 = document.getElementById('inTeachings3').className;
+
+                            if (nickChar == 'Aether' || nickChar == 'Lumine') {
+                                document.getElementById('domainName').textContent = 'Steeple of Ignorance';
+                                document.getElementById('imageDomain').src = 'resources/Domains/steeple-of-ignorance.webp';
+
+                                document.getElementById('inPhilosophies1').classList.remove(currentPhilosophies1);
+                                document.getElementById('inPhilosophies1').classList.add('philoBoxAdmonition');
+                                document.getElementById('inGuides1').classList.remove(currentGuides1);
+                                document.getElementById('inGuides1').classList.add('guideBoxAdmonition');
+                                document.getElementById('inTeachings1').classList.remove(currentTeachings1);
+                                document.getElementById('inTeachings1').classList.add('teachBoxAdmonition');
+
+                                document.getElementById('inPhilosophies2').classList.remove(currentPhilosophies2);
+                                document.getElementById('inPhilosophies2').classList.add('philoBoxIngenuity');
+                                document.getElementById('inGuides2').classList.remove(currentGuides2);
+                                document.getElementById('inGuides2').classList.add('guideBoxIngenuity');
+                                document.getElementById('inTeachings2').classList.remove(currentTeachings2);
+                                document.getElementById('inTeachings2').classList.add('teachBoxIngenuity');
+
+                                document.getElementById('inPhilosophies3').classList.remove(currentPhilosophies3);
+                                document.getElementById('inPhilosophies3').classList.add('philoBoxPraxis');
+                                document.getElementById('inGuides3').classList.remove(currentGuides3);
+                                document.getElementById('inGuides3').classList.add('guideBoxPraxis');
+                                document.getElementById('inTeachings3').classList.remove(currentTeachings3);
+                                document.getElementById('inTeachings3').classList.add('teachBoxPraxis');
+
+                                document.getElementById('philoReq1').style.opacity = '1';
+                                document.getElementById('philoReq3').style.opacity = '1';
+
+                                document.getElementById('guideReq1').style.opacity = '1';
+                                document.getElementById('guideReq3').style.opacity = '1';
+
+                                document.getElementById('teachReq1').style.opacity = '1';
+                                document.getElementById('teachReq3').style.opacity = '1';
+
+                                document.getElementById('philoReqImg1').src = 'resources/Talent Books/admonition-3.webp';
+                                document.getElementById('philoReqImg2').src = 'resources/Talent Books/ingenuity-3.webp';
+                                document.getElementById('philoReqImg3').src = 'resources/Talent Books/praxis-3.webp';
+                                document.getElementById('guideReqImg1').src = 'resources/Talent Books/admonition-2.webp';
+                                document.getElementById('guideReqImg2').src = 'resources/Talent Books/ingenuity-2.webp';
+                                document.getElementById('guideReqImg3').src = 'resources/Talent Books/praxis-2.webp';
+                                document.getElementById('teachReqImg1').src = 'resources/Talent Books/admonition-1.webp';
+                                document.getElementById('teachReqImg2').src = 'resources/Talent Books/ingenuity-1.webp';
+                                document.getElementById('teachReqImg3').src = 'resources/Talent Books/praxis-1.webp';
+                            } else {
+                                document.getElementById('inPhilosophies1').classList.remove(currentPhilosophies1);
+                                document.getElementById('inPhilosophies1').classList.add('philoBoxStar');
+                                document.getElementById('inGuides1').classList.remove(currentGuides1);
+                                document.getElementById('inGuides1').classList.add('guideBoxStar');
+                                document.getElementById('inTeachings1').classList.remove(currentTeachings1);
+                                document.getElementById('inTeachings1').classList.add('teachBoxStar');
+
+                                document.getElementById('inPhilosophies3').classList.remove(currentPhilosophies3);
+                                document.getElementById('inPhilosophies3').classList.add('philoBoxStar');
+                                document.getElementById('inGuides3').classList.remove(currentGuides3);
+                                document.getElementById('inGuides3').classList.add('guideBoxStar');
+                                document.getElementById('inTeachings3').classList.remove(currentTeachings3);
+                                document.getElementById('inTeachings3').classList.add('teachBoxStar');
+
+                                document.getElementById('philoReq1').style.opacity = '0';
+                                document.getElementById('philoReq3').style.opacity = '0';
+
+                                document.getElementById('guideReq1').style.opacity = '0';
+                                document.getElementById('guideReq3').style.opacity = '0';
+
+                                document.getElementById('teachReq1').style.opacity = '0';
+                                document.getElementById('teachReq3').style.opacity = '0';
+
+                                for (talentConfirmed = 0; talentConfirmed != 1;) {
+                                    for (var n = 0; n < freedomIn.length; n++) {
+                                        if(freedomIn[n].includes(nickChar)) {
+                                            document.getElementById('domainName').textContent = 'Forsaken Rift';
+                                            document.getElementById('imageDomain').src = 'resources/Domains/forsaken-rift.webp';
+                                            document.getElementById('inPhilosophies2').classList.remove(currentPhilosophies2);
+                                            document.getElementById('inPhilosophies2').classList.add('philoBoxFreedom');
+                                            document.getElementById('inGuides2').classList.remove(currentGuides2);
+                                            document.getElementById('inGuides2').classList.add('guideBoxFreedom');
+                                            document.getElementById('inTeachings2').classList.remove(currentTeachings2);
+                                            document.getElementById('inTeachings2').classList.add('teachBoxFreedom');
+
+                                            document.getElementById('philoReqImg2').src = 'resources/Talent Books/freedom-3.webp';
+                                            document.getElementById('guideReqImg2').src = 'resources/Talent Books/freedom-2.webp';
+                                            document.getElementById('teachReqImg2').src = 'resources/Talent Books/freedom-1.webp';
+
+                                            talentConfirmed = 1;
+                                        }
+                                    }
+                                    for (var n = 0; n < resistanceIn.length; n++) {
+                                        if(resistanceIn[n].includes(nickChar)) {
+                                            document.getElementById('domainName').textContent = 'Forsaken Rift';
+                                            document.getElementById('imageDomain').src = 'resources/Domains/forsaken-rift.webp';
+                                            document.getElementById('inPhilosophies2').classList.remove(currentPhilosophies2);
+                                            document.getElementById('inPhilosophies2').classList.add('philoBoxResistance');
+                                            document.getElementById('inGuides2').classList.remove(currentGuides2);
+                                            document.getElementById('inGuides2').classList.add('guideBoxResistance');
+                                            document.getElementById('inTeachings2').classList.remove(currentTeachings2);
+                                            document.getElementById('inTeachings2').classList.add('teachBoxResistance');
+
+                                            document.getElementById('philoReqImg2').src = 'resources/Talent Books/resistance-3.webp';
+                                            document.getElementById('guideReqImg2').src = 'resources/Talent Books/resistance-2.webp';
+                                            document.getElementById('teachReqImg2').src = 'resources/Talent Books/resistance-1.webp';
+
+                                            talentConfirmed = 1;
+                                        }
+                                    }
+                                    for (var n = 0; n < balladIn.length; n++) {
+                                        if(balladIn[n].includes(nickChar)) {
+                                            document.getElementById('domainName').textContent = 'Forsaken Rift';
+                                            document.getElementById('imageDomain').src = 'resources/Domains/forsaken-rift.webp';
+                                            document.getElementById('inPhilosophies2').classList.remove(currentPhilosophies2);
+                                            document.getElementById('inPhilosophies2').classList.add('philoBoxBallad');
+                                            document.getElementById('inGuides2').classList.remove(currentGuides2);
+                                            document.getElementById('inGuides2').classList.add('guideBoxBallad');
+                                            document.getElementById('inTeachings2').classList.remove(currentTeachings2);
+                                            document.getElementById('inTeachings2').classList.add('teachBoxBallad');
+
+                                            document.getElementById('philoReqImg2').src = 'resources/Talent Books/ballad-3.webp';
+                                            document.getElementById('guideReqImg2').src = 'resources/Talent Books/ballad-2.webp';
+                                            document.getElementById('teachReqImg2').src = 'resources/Talent Books/ballad-1.webp';
+
+                                            talentConfirmed = 1;
+                                        }
+                                    }
+                                    for (var n = 0; n < prosperityIn.length; n++) {
+                                        if(prosperityIn[n].includes(nickChar)) {
+                                            document.getElementById('domainName').textContent = 'Taishan Mansion';
+                                            document.getElementById('imageDomain').src = 'resources/Domains/taishan-mansion.webp';
+                                            document.getElementById('inPhilosophies2').classList.remove(currentPhilosophies2);
+                                            document.getElementById('inPhilosophies2').classList.add('philoBoxProsperity');
+                                            document.getElementById('inGuides2').classList.remove(currentGuides2);
+                                            document.getElementById('inGuides2').classList.add('guideBoxProsperity');
+                                            document.getElementById('inTeachings2').classList.remove(currentTeachings2);
+                                            document.getElementById('inTeachings2').classList.add('teachBoxProsperity');
+
+                                            document.getElementById('philoReqImg2').src = 'resources/Talent Books/prosperity-3.webp';
+                                            document.getElementById('guideReqImg2').src = 'resources/Talent Books/prosperity-2.webp';
+                                            document.getElementById('teachReqImg2').src = 'resources/Talent Books/prosperity-1.webp';
+
+                                            talentConfirmed = 1;
+                                        }
+                                    }
+                                    for (var n = 0; n < diligenceIn.length; n++) {
+                                        if(diligenceIn[n].includes(nickChar)) {
+                                            document.getElementById('domainName').textContent = 'Taishan Mansion';
+                                            document.getElementById('imageDomain').src = 'resources/Domains/taishan-mansion.webp';
+                                            document.getElementById('inPhilosophies2').classList.remove(currentPhilosophies2);
+                                            document.getElementById('inPhilosophies2').classList.add('philoBoxDiligence');
+                                            document.getElementById('inGuides2').classList.remove(currentGuides2);
+                                            document.getElementById('inGuides2').classList.add('guideBoxDiligence');
+                                            document.getElementById('inTeachings2').classList.remove(currentTeachings2);
+                                            document.getElementById('inTeachings2').classList.add('teachBoxDiligence');
+
+                                            document.getElementById('philoReqImg2').src = 'resources/Talent Books/diligence-3.webp';
+                                            document.getElementById('guideReqImg2').src = 'resources/Talent Books/diligence-2.webp';
+                                            document.getElementById('teachReqImg2').src = 'resources/Talent Books/diligence-1.webp';
+
+                                            talentConfirmed = 1;
+                                        }
+                                    }
+                                    for (var n = 0; n < goldIn.length; n++) {
+                                        if(goldIn[n].includes(nickChar)) {
+                                            document.getElementById('domainName').textContent = 'Taishan Mansion';
+                                            document.getElementById('imageDomain').src = 'resources/Domains/taishan-mansion.webp';
+                                            document.getElementById('inPhilosophies2').classList.remove(currentPhilosophies2);
+                                            document.getElementById('inPhilosophies2').classList.add('philoBoxGold');
+                                            document.getElementById('inGuides2').classList.remove(currentGuides2);
+                                            document.getElementById('inGuides2').classList.add('guideBoxGold');
+                                            document.getElementById('inTeachings2').classList.remove(currentTeachings2);
+                                            document.getElementById('inTeachings2').classList.add('teachBoxGold');
+
+                                            document.getElementById('philoReqImg2').src = 'resources/Talent Books/gold-3.webp';
+                                            document.getElementById('guideReqImg2').src = 'resources/Talent Books/gold-2.webp';
+                                            document.getElementById('teachReqImg2').src = 'resources/Talent Books/gold-1.webp';
+
+                                            talentConfirmed = 1;
+                                        }
+                                    }
+                                    for (var n = 0; n < transienceIn.length; n++) {
+                                        if(transienceIn[n].includes(nickChar)) {
+                                            document.getElementById('domainName').textContent = 'Violet Court';
+                                            document.getElementById('imageDomain').src = 'resources/Domains/violet-court.webp';
+                                            document.getElementById('inPhilosophies2').classList.remove(currentPhilosophies2);
+                                            document.getElementById('inPhilosophies2').classList.add('philoBoxTransience');
+                                            document.getElementById('inGuides2').classList.remove(currentGuides2);
+                                            document.getElementById('inGuides2').classList.add('guideBoxTransience');
+                                            document.getElementById('inTeachings2').classList.remove(currentTeachings2);
+                                            document.getElementById('inTeachings2').classList.add('teachBoxTransience');
+
+                                            document.getElementById('philoReqImg2').src = 'resources/Talent Books/transience-3.webp';
+                                            document.getElementById('guideReqImg2').src = 'resources/Talent Books/transience-2.webp';
+                                            document.getElementById('teachReqImg2').src = 'resources/Talent Books/transience-1.webp';
+
+                                            talentConfirmed = 1;
+                                        }
+                                    }
+                                    for (var n = 0; n < eleganceIn.length; n++) {
+                                        if(eleganceIn[n].includes(nickChar)) {
+                                            document.getElementById('domainName').textContent = 'Violet Court';
+                                            document.getElementById('imageDomain').src = 'resources/Domains/violet-court.webp';
+                                            document.getElementById('inPhilosophies2').classList.remove(currentPhilosophies2);
+                                            document.getElementById('inPhilosophies2').classList.add('philoBoxElegance');
+                                            document.getElementById('inGuides2').classList.remove(currentGuides2);
+                                            document.getElementById('inGuides2').classList.add('guideBoxElegance');
+                                            document.getElementById('inTeachings2').classList.remove(currentTeachings2);
+                                            document.getElementById('inTeachings2').classList.add('teachBoxElegance');
+
+                                            document.getElementById('philoReqImg2').src = 'resources/Talent Books/elegance-3.webp';
+                                            document.getElementById('guideReqImg2').src = 'resources/Talent Books/elegance-2.webp';
+                                            document.getElementById('teachReqImg2').src = 'resources/Talent Books/elegance-1.webp';
+
+                                            talentConfirmed = 1;
+                                        }
+                                    }
+                                    for (var n = 0; n < lightIn.length; n++) {
+                                        if(lightIn[n].includes(nickChar)) {
+                                            document.getElementById('domainName').textContent = 'Violet Court';
+                                            document.getElementById('imageDomain').src = 'resources/Domains/violet-court.webp';
+                                            document.getElementById('inPhilosophies2').classList.remove(currentPhilosophies2);
+                                            document.getElementById('inPhilosophies2').classList.add('philoBoxLight');
+                                            document.getElementById('inGuides2').classList.remove(currentGuides2);
+                                            document.getElementById('inGuides2').classList.add('guideBoxLight');
+                                            document.getElementById('inTeachings2').classList.remove(currentTeachings2);
+                                            document.getElementById('inTeachings2').classList.add('teachBoxLight');
+
+                                            document.getElementById('philoReqImg2').src = 'resources/Talent Books/light-3.webp';
+                                            document.getElementById('guideReqImg2').src = 'resources/Talent Books/light-2.webp';
+                                            document.getElementById('teachReqImg2').src = 'resources/Talent Books/light-1.webp';
+
+                                            talentConfirmed = 1;
+                                        }
+                                    }
+                                    for (var n = 0; n < admonitionIn.length; n++) {
+                                        if(admonitionIn[n].includes(nickChar)) {
+                                            document.getElementById('domainName').textContent = 'Steeple of Ignorance';
+                                            document.getElementById('imageDomain').src = 'resources/Domains/steeple-of-ignorance.webp';
+                                            document.getElementById('inPhilosophies2').classList.remove(currentPhilosophies2);
+                                            document.getElementById('inPhilosophies2').classList.add('philoBoxAdmonition');
+                                            document.getElementById('inGuides2').classList.remove(currentGuides2);
+                                            document.getElementById('inGuides2').classList.add('guideBoxAdmonition');
+                                            document.getElementById('inTeachings2').classList.remove(currentTeachings2);
+                                            document.getElementById('inTeachings2').classList.add('teachBoxAdmonition');
+
+                                            document.getElementById('philoReqImg2').src = 'resources/Talent Books/admonition-3.webp';
+                                            document.getElementById('guideReqImg2').src = 'resources/Talent Books/admonition-2.webp';
+                                            document.getElementById('teachReqImg2').src = 'resources/Talent Books/admonition-1.webp';
+
+                                            talentConfirmed = 1;
+                                        }
+                                    }
+                                    for (var n = 0; n < ingenuityIn.length; n++) {
+                                        if(ingenuityIn[n].includes(nickChar)) {
+                                            document.getElementById('domainName').textContent = 'Steeple of Ignorance';
+                                            document.getElementById('imageDomain').src = 'resources/Domains/steeple-of-ignorance.webp';
+                                            document.getElementById('inPhilosophies2').classList.remove(currentPhilosophies2);
+                                            document.getElementById('inPhilosophies2').classList.add('philoBoxIngenuity');
+                                            document.getElementById('inGuides2').classList.remove(currentGuides2);
+                                            document.getElementById('inGuides2').classList.add('guideBoxIngenuity');
+                                            document.getElementById('inTeachings2').classList.remove(currentTeachings2);
+                                            document.getElementById('inTeachings2').classList.add('teachBoxIngenuity');
+
+                                            document.getElementById('philoReqImg2').src = 'resources/Talent Books/ingenuity-3.webp';
+                                            document.getElementById('guideReqImg2').src = 'resources/Talent Books/ingenuity-2.webp';
+                                            document.getElementById('teachReqImg2').src = 'resources/Talent Books/ingenuity-1.webp';
+                                            
+                                            talentConfirmed = 1;
+                                        }
+                                    }
+                                    for (var n = 0; n < praxisIn.length; n++) {
+                                        if(praxisIn[n].includes(nickChar)) {
+                                            document.getElementById('domainName').textContent = 'Steeple of Ignorance';
+                                            document.getElementById('imageDomain').src = 'resources/Domains/steeple-of-ignorance.webp';
+                                            document.getElementById('inPhilosophies2').classList.remove(currentPhilosophies2);
+                                            document.getElementById('inPhilosophies2').classList.add('philoBoxPraxis');
+                                            document.getElementById('inGuides2').classList.remove(currentGuides2);
+                                            document.getElementById('inGuides2').classList.add('guideBoxPraxis');
+                                            document.getElementById('inTeachings2').classList.remove(currentTeachings2);
+                                            document.getElementById('inTeachings2').classList.add('teachBoxPraxis');
+
+                                            document.getElementById('philoReqImg2').src = 'resources/Talent Books/praxis-3.webp';
+                                            document.getElementById('guideReqImg2').src = 'resources/Talent Books/praxis-2.webp';
+                                            document.getElementById('teachReqImg2').src = 'resources/Talent Books/praxis-1.webp';
+
+                                            talentConfirmed = 1;
+                                        }
+                                    }
+                                }
+                            }
+
+                            closeChangeBox();
+                        }
+                    </script>
+                </div>
+            </div>
+        </div>
+        <div class="bgBox">
+            <script>
+                function calculate() {
+                    var currNormal = document.getElementById('currentNormal').value;
+                    var targNormal = document.getElementById('targetNormal').value;
+                    var currSkill = document.getElementById('currentSkill').value;
+                    var targSkill = document.getElementById('targetSkill').value;
+                    var currBurst = document.getElementById('currentBurst').value;
+                    var targBurst = document.getElementById('targBurst').value;
+                }
+            </script>
+            <div class="infoBox">
+                <div class="charBox">
+                    <div class="charBoxHeader">
+                        <div class="elementBox">
+                            <button type="button" class="elementButton" id="elementVision" onclick="changeElement()" disabled><img class="elementChar" id="imgElement" src="resources/webpage/logo.png"></button>
+                            <script>
+                                function changeElement() {
+                                    let oldImgSource = document.getElementById('imgElement').src;
+                                    let imgSourceStart = oldImgSource.substr(31, 10);
+                                    let imgSourceFolder = 'Elements/';
+                                    var imgSourceName = oldImgSource.substr(50).split('.');
+
+                                    let oldSkillSource = document.getElementById('talentsSkill').src;
+                                    let oldBurstSource = document.getElementById('talentsBurst').src;
+                                    let skillSourceStart = oldSkillSource.substr(31, 10);
+                                    let burstSourceStart = oldBurstSource.substr(31, 10);
+                                    let talentSourceFolder = 'Talents/';
+                                    let skillSourceName0 = oldSkillSource.substr(49).split('.');
+                                    let burstSourceName0 = oldBurstSource.substr(49).split('.');
+                                    var skillSourceName1 = skillSourceName0[0].split('-');
+                                    var burstSourceName1 = burstSourceName0[0].split('-');
+
+                                    var currentPhilosophies1 = document.getElementById('inPhilosophies1').className;
+                                    var currentGuides1 = document.getElementById('inGuides1').className;
+                                    var currentTeachings1 = document.getElementById('inTeachings1').className;
+
+                                    var currentPhilosophies2 = document.getElementById('inPhilosophies2').className;
+                                    var currentGuides2 = document.getElementById('inGuides2').className;
+                                    var currentTeachings2 = document.getElementById('inTeachings2').className;
+
+                                    var currentPhilosophies3 = document.getElementById('inPhilosophies3').className;
+                                    var currentGuides3 = document.getElementById('inGuides3').className;
+                                    var currentTeachings3 = document.getElementById('inTeachings3').className;
+                                    
+                                    if (imgSourceName[0] == 'dendro') {
+                                        imgSourceName[0] = 'electro';
+                                        skillSourceName1[1] = 'electro';
+                                        burstSourceName1[1] = 'electro';
+
+                                        document.getElementById('domainName').textContent = 'Violet Court';
+                                        document.getElementById('imageDomain').src = 'resources/Domains/violet-court.webp';
+
+                                        document.getElementById('inPhilosophies1').classList.remove(currentPhilosophies1);
+                                        document.getElementById('inPhilosophies1').classList.add('philoBoxTransience');
+                                        document.getElementById('inGuides1').classList.remove(currentGuides1);
+                                        document.getElementById('inGuides1').classList.add('guideBoxTransience');
+                                        document.getElementById('inTeachings1').classList.remove(currentTeachings1);
+                                        document.getElementById('inTeachings1').classList.add('teachBoxTransience');
+
+                                        document.getElementById('inPhilosophies2').classList.remove(currentPhilosophies2);
+                                        document.getElementById('inPhilosophies2').classList.add('philoBoxElegance');
+                                        document.getElementById('inGuides2').classList.remove(currentGuides2);
+                                        document.getElementById('inGuides2').classList.add('guideBoxElegance');
+                                        document.getElementById('inTeachings2').classList.remove(currentTeachings2);
+                                        document.getElementById('inTeachings2').classList.add('teachBoxElegance');
+
+                                        document.getElementById('inPhilosophies3').classList.remove(currentPhilosophies3);
+                                        document.getElementById('inPhilosophies3').classList.add('philoBoxLight');
+                                        document.getElementById('inGuides3').classList.remove(currentGuides3);
+                                        document.getElementById('inGuides3').classList.add('guideBoxLight');
+                                        document.getElementById('inTeachings3').classList.remove(currentTeachings3);
+                                        document.getElementById('inTeachings3').classList.add('teachBoxLight');
+
+                                        document.getElementById('philoReqImg1').src = 'resources/Talent Books/transience-3.webp';
+                                        document.getElementById('philoReqImg2').src = 'resources/Talent Books/elegance-3.webp';
+                                        document.getElementById('philoReqImg3').src = 'resources/Talent Books/light-3.webp';
+                                        document.getElementById('guideReqImg1').src = 'resources/Talent Books/transience-2.webp';
+                                        document.getElementById('guideReqImg2').src = 'resources/Talent Books/elegance-2.webp';
+                                        document.getElementById('guideReqImg3').src = 'resources/Talent Books/light-2.webp';
+                                        document.getElementById('teachReqImg1').src = 'resources/Talent Books/transience-1.webp';
+                                        document.getElementById('teachReqImg2').src = 'resources/Talent Books/elegance-1.webp';
+                                        document.getElementById('teachReqImg3').src = 'resources/Talent Books/light-1.webp';
+                                    } else if (imgSourceName[0] == 'electro') {
+                                        imgSourceName[0] = 'geo';
+                                        skillSourceName1[1] = 'geo';
+                                        burstSourceName1[1] = 'geo';
+
+                                        document.getElementById('domainName').textContent = 'Taishan Mansion';
+                                        document.getElementById('imageDomain').src = 'resources/Domains/taishan-mansion.webp';
+
+                                        document.getElementById('inPhilosophies1').classList.remove(currentPhilosophies1);
+                                        document.getElementById('inPhilosophies1').classList.add('philoBoxProsperity');
+                                        document.getElementById('inGuides1').classList.remove(currentGuides1);
+                                        document.getElementById('inGuides1').classList.add('guideBoxProsperity');
+                                        document.getElementById('inTeachings1').classList.remove(currentTeachings1);
+                                        document.getElementById('inTeachings1').classList.add('teachBoxProsperity');
+
+                                        document.getElementById('inPhilosophies2').classList.remove(currentPhilosophies2);
+                                        document.getElementById('inPhilosophies2').classList.add('philoBoxDiligence');
+                                        document.getElementById('inGuides2').classList.remove(currentGuides2);
+                                        document.getElementById('inGuides2').classList.add('guideBoxDiligence');
+                                        document.getElementById('inTeachings2').classList.remove(currentTeachings2);
+                                        document.getElementById('inTeachings2').classList.add('teachBoxDiligence');
+
+                                        document.getElementById('inPhilosophies3').classList.remove(currentPhilosophies3);
+                                        document.getElementById('inPhilosophies3').classList.add('philoBoxGold');
+                                        document.getElementById('inGuides3').classList.remove(currentGuides3);
+                                        document.getElementById('inGuides3').classList.add('guideBoxGold');
+                                        document.getElementById('inTeachings3').classList.remove(currentTeachings3);
+                                        document.getElementById('inTeachings3').classList.add('teachBoxGold');
+
+                                        document.getElementById('philoReqImg1').src = 'resources/Talent Books/prosperity-3.webp';
+                                        document.getElementById('philoReqImg2').src = 'resources/Talent Books/diligence-3.webp';
+                                        document.getElementById('philoReqImg3').src = 'resources/Talent Books/gold-3.webp';
+                                        document.getElementById('guideReqImg1').src = 'resources/Talent Books/prosperity-2.webp';
+                                        document.getElementById('guideReqImg2').src = 'resources/Talent Books/diligence-2.webp';
+                                        document.getElementById('guideReqImg3').src = 'resources/Talent Books/gold-2.webp';
+                                        document.getElementById('teachReqImg1').src = 'resources/Talent Books/prosperity-1.webp';
+                                        document.getElementById('teachReqImg2').src = 'resources/Talent Books/diligence-1.webp';
+                                        document.getElementById('teachReqImg3').src = 'resources/Talent Books/gold-1.webp';
+                                    } else if (imgSourceName[0] == 'geo') {
+                                        imgSourceName[0] = 'anemo';
+                                        skillSourceName1[1] = 'anemo';
+                                        burstSourceName1[1] = 'anemo';
+
+                                        document.getElementById('domainName').textContent = 'Forsaken Rift';
+                                        document.getElementById('imageDomain').src = 'resources/Domains/forsaken-rift.webp';
+
+                                        document.getElementById('inPhilosophies1').classList.remove(currentPhilosophies1);
+                                        document.getElementById('inPhilosophies1').classList.add('philoBoxFreedom');
+                                        document.getElementById('inGuides1').classList.remove(currentGuides1);
+                                        document.getElementById('inGuides1').classList.add('guideBoxFreedom');
+                                        document.getElementById('inTeachings1').classList.remove(currentTeachings1);
+                                        document.getElementById('inTeachings1').classList.add('teachBoxFreedom');
+
+                                        document.getElementById('inPhilosophies2').classList.remove(currentPhilosophies2);
+                                        document.getElementById('inPhilosophies2').classList.add('philoBoxResistance');
+                                        document.getElementById('inGuides2').classList.remove(currentGuides2);
+                                        document.getElementById('inGuides2').classList.add('guideBoxResistance');
+                                        document.getElementById('inTeachings2').classList.remove(currentTeachings2);
+                                        document.getElementById('inTeachings2').classList.add('teachBoxResistance');
+
+                                        document.getElementById('inPhilosophies3').classList.remove(currentPhilosophies3);
+                                        document.getElementById('inPhilosophies3').classList.add('philoBoxBallad');
+                                        document.getElementById('inGuides3').classList.remove(currentGuides3);
+                                        document.getElementById('inGuides3').classList.add('guideBoxBallad');
+                                        document.getElementById('inTeachings3').classList.remove(currentTeachings3);
+                                        document.getElementById('inTeachings3').classList.add('teachBoxBallad');
+
+                                        document.getElementById('philoReqImg1').src = 'resources/Talent Books/freedom-3.webp';
+                                        document.getElementById('philoReqImg2').src = 'resources/Talent Books/resistance-3.webp';
+                                        document.getElementById('philoReqImg3').src = 'resources/Talent Books/ballad-3.webp';
+                                        document.getElementById('guideReqImg1').src = 'resources/Talent Books/freedom-2.webp';
+                                        document.getElementById('guideReqImg2').src = 'resources/Talent Books/resistance-2.webp';
+                                        document.getElementById('guideReqImg3').src = 'resources/Talent Books/ballad-2.webp';
+                                        document.getElementById('teachReqImg1').src = 'resources/Talent Books/freedom-1.webp';
+                                        document.getElementById('teachReqImg2').src = 'resources/Talent Books/resistance-1.webp';
+                                        document.getElementById('teachReqImg3').src = 'resources/Talent Books/ballad-1.webp';
+                                    } else {
+                                        imgSourceName[0] = 'dendro';
+                                        skillSourceName1[1] = 'dendro';
+                                        burstSourceName1[1] = 'dendro';
+
+                                        document.getElementById('domainName').textContent = 'Steeple of Ignorance';
+                                        document.getElementById('imageDomain').src = 'resources/Domains/steeple-of-ignorance.webp';
+
+                                        document.getElementById('inPhilosophies1').classList.remove(currentPhilosophies1);
+                                        document.getElementById('inPhilosophies1').classList.add('philoBoxAdmonition');
+                                        document.getElementById('inGuides1').classList.remove(currentGuides1);
+                                        document.getElementById('inGuides1').classList.add('guideBoxAdmonition');
+                                        document.getElementById('inTeachings1').classList.remove(currentTeachings1);
+                                        document.getElementById('inTeachings1').classList.add('teachBoxAdmonition');
+
+                                        document.getElementById('inPhilosophies2').classList.remove(currentPhilosophies2);
+                                        document.getElementById('inPhilosophies2').classList.add('philoBoxIngenuity');
+                                        document.getElementById('inGuides2').classList.remove(currentGuides2);
+                                        document.getElementById('inGuides2').classList.add('guideBoxIngenuity');
+                                        document.getElementById('inTeachings2').classList.remove(currentTeachings2);
+                                        document.getElementById('inTeachings2').classList.add('teachBoxIngenuity');
+
+                                        document.getElementById('inPhilosophies3').classList.remove(currentPhilosophies3);
+                                        document.getElementById('inPhilosophies3').classList.add('philoBoxPraxis');
+                                        document.getElementById('inGuides3').classList.remove(currentGuides3);
+                                        document.getElementById('inGuides3').classList.add('guideBoxPraxis');
+                                        document.getElementById('inTeachings3').classList.remove(currentTeachings3);
+                                        document.getElementById('inTeachings3').classList.add('teachBoxPraxis');
+
+                                        document.getElementById('philoReqImg1').src = 'resources/Talent Books/admonition-3.webp';
+                                        document.getElementById('philoReqImg2').src = 'resources/Talent Books/ingenuity-3.webp';
+                                        document.getElementById('philoReqImg3').src = 'resources/Talent Books/praxis-3.webp';
+                                        document.getElementById('guideReqImg1').src = 'resources/Talent Books/admonition-2.webp';
+                                        document.getElementById('guideReqImg2').src = 'resources/Talent Books/ingenuity-2.webp';
+                                        document.getElementById('guideReqImg3').src = 'resources/Talent Books/praxis-2.webp';
+                                        document.getElementById('teachReqImg1').src = 'resources/Talent Books/admonition-1.webp';
+                                        document.getElementById('teachReqImg2').src = 'resources/Talent Books/ingenuity-1.webp';
+                                        document.getElementById('teachReqImg3').src = 'resources/Talent Books/praxis-1.webp';
+                                    }
+                                    skillSourceName0[0] = skillSourceName1.join('-');
+                                    burstSourceName0[0] = burstSourceName1.join('-');
+
+                                    let imgSourceFile = imgSourceName.join('.');
+                                    let skillSourceFile = skillSourceName0.join('.');
+                                    let burstSourceFile = burstSourceName0.join('.');
+
+                                    let imgSource = imgSourceStart + imgSourceFolder + imgSourceFile;
+                                    let skillSource = skillSourceStart + talentSourceFolder + skillSourceFile
+                                    let burstSource = burstSourceStart + talentSourceFolder + burstSourceFile
+                                    document.getElementById('imgElement').src = imgSource;
+                                    document.getElementById('talentsSkill').src = skillSource;
+                                    document.getElementById('talentsBurst').src = burstSource;
+                                }
+                            </script>
+                        </div> 
+                        <div class="nameBox">
+                            <span class="nameCharacter" id="charName">Paimon</span>
+                        </div>
+                        <div class="changeButtonBox">
+                            <button type="button" class="changeButton" id="openCharSearch" onclick="openChangeBox()"> >> </button>
+                            <script>
+                                function openChangeBox(){
+                                    document.getElementById('charChangeOverlay').style.display = 'block';
+                                    document.getElementById('charChangeBox').style.display = 'flex';
+                                    document.getElementById('openCharSearch').style.opacity = '0';
+                                    document.getElementById('openCharSearch').style.transform = 'rotate(90deg) translateX(25px)';
+                                }
+                            </script>
+                        </div>
+                    </div>
+                    <div class="imgBox">
+                        <img class="imgCharacter" src="resources/Characters/paimon-card.webp" id="charImage" alt="Paimon">
+                    </div>
+                </div>
+                <div class="talentsBox">
+                    <div class="talentsHeaderBox">
+                        <div class="talentsLeftHeader">
+                            <span class="talentsHeader">Current</span>
+                        </div>
+                        <div class="talentsRightHeader">
+                            <span class="talentsHeader">Target</span>
+                        </div>
+                    </div>
+                    <div class="normalBox">
+                        <input class="talentLevelCurrent" type="number" id="currentNormal" value="1" onkeypress="inputCurrent(this)" onkeyup="checkCurrent(this); calculate()">
+                        <img class="imgNormal" src="resources/Talents/paimon-normal.webp" id="talentsNormal">
+                        <input class="talentLevelTarget" type="number" id="targetNormal"value="1" onkeypress="inputTarget(this)" onkeyup="checkTarget(this); calculate()">
+                    </div>
+                    <div class="skillBox">
+                        <input class="talentLevelCurrent" type="number" id="currentSkill" value="1" onkeypress="inputCurrent(this)" onkeyup="checkCurrent(this); calculate()">
+                        <img class="imgSkill" src="resources/Talents/paimon-skill.webp" id="talentsSkill">
+                        <input class="talentLevelTarget" type="number" id="targetSkill" value="1" onkeypress="inputTarget(this)" onkeyup="checkTarget(this); calculate()">
+                    </div>
+                    <div class="burstBox">
+                        <input class="talentLevelCurrent" type="number" id="currentBurst" value="1" onkeypress="inputCurrent(this)" onkeyup="checkCurrent(this); calculate()">
+                        <img class="imgBurst" src="resources/Talents/paimon-burst.webp" id="talentsBurst">
+                        <input class="talentLevelTarget" type="number" id="targetBurst" value="1" onkeypress="inputTarget(this)" onkeyup="checkTarget(this); calculate()">
+                    </div>
+                    <script>
+                        function inputCurrent(target) {
+                            var level = target.value;
+                            target.value = "";
+                            var keyIn = event.key;
+                            if (keyIn == 0 && level != 1) {
+                                event.preventDefault();
+                                target.value = Number(level);
+                            } else if (level == 1 && keyIn == 0) {
+                                target.value = Number(level);
+                            } else if (keyIn != 1 && keyIn != 2 && keyIn != 3 && keyIn != 4 && keyIn != 5 && keyIn != 6 && keyIn != 7 && keyIn != 8 && keyIn != 9 && keyIn != 10) {  
+                                event.preventDefault();
+                                target.value = Number(level);
+                            }
+                        }
+
+                        function checkCurrent(target) {
+                            let talentType = target.id.substr(7);
+                            let targetString = 'target';
+                            let targetId = targetString + talentType;
+
+                            var currentLevel = target.value;
+                            var targetLevel = document.getElementById(targetId).value;
+                            if (currentLevel > targetLevel) {
+                                document.getElementById(targetId).value = Number(currentLevel);
+                            } else if (currentLevel == 10) {
+                                document.getElementById(targetId).value = '10';
+                            }
+                        }    
+                            
+                        function inputTarget(target) {
+                            var level = target.value;
+                            target.value = "";
+                            var keyIn = event.key;
+                            if (keyIn == 0 && level != 1) {
+                                event.preventDefault();
+                                target.value = Number(level);
+                            } else if (level == 1 && keyIn == 0) {
+                                target.value = Number(level);
+                            } else if (keyIn != 1 && keyIn != 2 && keyIn != 3 && keyIn != 4 && keyIn != 5 && keyIn != 6 && keyIn != 7 && keyIn != 8 && keyIn != 9 && keyIn != 10) {  
+                                event.preventDefault();
+                                target.value = Number(level);
+                            }
+                        }
+
+                        function checkTarget(target) {
+                            let talentType = target.id.substr(6);
+                            let targetString = 'current';
+                            let targetId = targetString + talentType;
+
+                            var targetLevel = target.value;
+                            var currentLevel = document.getElementById(targetId).value;
+                            if (targetLevel < currentLevel) {
+                                document.getElementById(targetId).value = Number(targetLevel);
+                            }
+                        }
+                        
+                    </script>
+                </div>
+            </div>
+            <div class="referenceBox">
+                <div class="domainBox">
+                    <div class="headerDomain">
+                        <span class="nameDomain" id="domainName">Celestia</span>
+                    </div>
+                    <div class="domainImageBox">
+                        <img class="imgDomain" src="resources/Domains/celestia.webp" id="imageDomain">
+                    </div>
+                </div>
+                <div class="inventoryBox">
+                    <div class="philoBoxStar" id="inPhilosophies1">
+                        <input class="inputPhilosophies" type="number" id="currentPhilosophies1" value="0" onkeyup="calculate()">
+                    </div>
+                    <div class="guideBoxStar" id="inGuides1">
+                        <input class="inputGuides" type="number" id="currentGuides1" value="0" onkeyup="calculate()">
+                    </div>
+                    <div class="teachBoxStar" id="inTeachings1">
+                        <input class="inputTeachings" type="number" id="currentTeachings1" value="0" onkeyup="calculate()">
+                    </div>
+
+                    <div class="philoBoxStarMain" id="inPhilosophies2">
+                        <input class="inputPhilosophiesMain" type="number" id="currentPhilosophies2" value="0" onkeyup="calculate()">
+                    </div>
+                    <div class="guideBoxStarMain" id="inGuides2">
+                        <input class="inputGuidesMain" type="number" id="currentGuides2" value="0" onkeyup="calculate()">
+                    </div>
+                    <div class="teachBoxStarMain" id="inTeachings2">
+                        <input class="inputTeachingsMain" type="number" id="currentTeachings2" value="0" onkeyup="calculate()">
+                    </div>
+
+                    <div class="philoBoxStar" id="inPhilosophies3">
+                        <input class="inputPhilosophies" type="number" id="currentPhilosophies3" value="0" onkeyup="calculate()">
+                    </div>
+                    <div class="guideBoxStar" id="inGuides3">
+                        <input class="inputGuides" type="number" id="currentGuides3" value="0" onkeyup="calculate()">
+                    </div>
+                    <div class="teachBoxStar" id="inTeachings3">
+                        <input class="inputTeachings" type="number" id="currentTeachings3" value="0" onkeyup="calculate()">
+                    </div>
+                </div>
+            </div>
+            <div class="resultsBox">
+                    <div class="requiredBox">
+                        <div class="requiredPhilosophiesBox">
+                            <div class="requiredPhilosophiesBox1" id="philoReq1">
+                                <img class="requiredPhilosophies" id="philoReqImg1" src="resources/Talent Books/star-3.webp">
+                                <label class="philoReqLabel" for="philoReqImg1" id="philoReq1">0</label>
+                            </div>
+                            <div class="requiredPhilosophiesBox2" id="philoReq2">
+                                <img class="requiredPhilosophies" id="philoReqImg2" src="resources/Talent Books/star-3.webp">
+                                <label class="philoReqLabel" for="philoReqImg2" id="philoReq2">0</label>
+                            </div>
+                            <div class="requiredPhilosophiesBox3" id="philoReq3">
+                                <img class="requiredPhilosophies" id="philoReqImg3" src="resources/Talent Books/star-3.webp">
+                                <label class="philoReqLabel" for="philoReqImg3" id="philoReq3">0</label>
+                            </div>
+                        </div>
+                        <div class="requiredGuidesBox">
+                            <div class="requiredGuidesBox1" id="guideReq1">
+                                <img class="requiredGuides" id="guideReqImg1" src="resources/Talent Books/star-2.webp">
+                                <label class="guideReqLabel" for="guideReqImg1" id="guideReq1">0</label>
+                            </div>
+                            <div class="requiredGuidesBox2" id="guideReq2">
+                                <img class="requiredGuides" id="guideReqImg2" src="resources/Talent Books/star-2.webp">
+                                <label class="guideReqLabel" for="guideReqImg2" id="guideReq2">0</label>
+                            </div>
+                            <div class="requiredGuidesBox3" id="guideReq3">
+                                <img class="requiredGuides" id="guideReqImg3" src="resources/Talent Books/star-2.webp">
+                                <label class="guideReqLabel" for="guideReqImg3" id="guideReq3">0</label>
+                            </div>
+                        </div>
+                        <div class="requiredTeachingsBox">
+                            <div class="requiredTeachingsBox1" id="teachReq1">
+                                <img class="requiredTeachings" id="teachReqImg1" src="resources/Talent Books/star-1.webp">
+                                <label class="teachReqLabel" for="teachReqImg1" id="teachReqLabel1">0</label>
+                            </div>
+                            <div class="requiredTeachingsBox2" id="teachReq2">
+                                <img class="requiredTeachings" id="teachReqImg2" src="resources/Talent Books/star-1.webp">
+                                <label class="teachReqLabel" for="teachReqImg2" id="teachReq2">0</label>
+                            </div>
+                            <div class="requiredTeachingsBox3" id="teachReq3">
+                                <img class="requiredTeachings" id="teachReqImg3" src="resources/Talent Books/star-1.webp">
+                                <label class="teachReqLabel" for="teachReqImg3" id="teachReq3">0</label>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="domainRunBox">
+                        <div class="runBoxHeader">
+                            <span class="resultMessage">Runs left...</span>
+                        </div>
+                        <div class="domainRun">
+                            <span class="calcResult">0</span>
+                        </div>
+                    </div>
+                </div>
+        </div>
+    </body>
+</html>

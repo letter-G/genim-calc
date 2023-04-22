@@ -1,0 +1,1534 @@
+.is-shown {
+    opacity: 1;
+}
+
+.choiceOverlay {
+    display: none;
+    z-index: 98;
+	height: 100%;
+    width: 100%;
+    position: absolute;
+    top: 0%;
+    left: 0%;
+    background-color: rgba(0,0,0,0.5);
+}
+
+.choiceBox {
+    display: none;
+    flex-direction: column;
+    flex-wrap: wrap;
+    z-index: 99;
+    height: 85%;
+    width: 65%;
+    padding: 15px 0px 0px 0px;
+    position: absolute;
+    top: 7.5%;
+    left: 17.5%;
+    border-radius: 50px;
+    background-color: rgba(0,0,0,0.95);
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+    align-items: top;
+    justify-content: left;
+}
+
+.functionBox {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    padding: 10px 25px;
+    align-items: top;
+    justify-content: center;
+}
+
+.backButtonBox {
+    width: 5%;
+    align-items: center;
+    justify-content: center;
+}
+
+.backButton {
+    height: 2.5vw;
+    width: 100%;
+    position: relative;
+    top: 5%;
+    left: 1%;
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0);
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.1);
+    font-size: 24px;
+    color: white;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.backButton:hover {
+    transform: scale(1.1);
+}
+
+.backButton:active {
+    transform: scale(0.95);
+}
+
+.charSearchBox {
+    display: flex;
+    flex-wrap: wrap;
+    height: 100%;
+    width: 95%;
+    align-items: center;
+    justify-content: left;
+}
+
+.charSearch {
+    height: 75%;
+    width: 95%;
+    padding: 0px 15px;
+    border: none;
+    border-radius: 25px;
+    background-color: rgba(255,255,255,0.25);
+    font-size: 18px;
+    color: white;
+    caret-color: transparent;
+}
+
+.charDisplayBox {
+    display: flex;
+    flex-wrap: wrap;
+    height: 90%;
+    width: 90%;
+    position: relative;
+    left: 50%;
+    transform: translateX(-50%);
+    align-items: top;
+    justify-content: center;
+    overflow: auto;
+}
+
+.charDisplay {
+    display: flex;
+    height: 128px;
+    width: 128px;
+    margin: 10px 5px;
+    opacity: 1;
+    cursor: pointer;
+}
+
+.is-lowlighted {
+    opacity: 0.25;
+}
+
+.infoBox {
+    display: flex;
+    flex-wrap: wrap;
+    width: 20%;
+    align-items: center;
+    justify-content: center;
+}
+
+.charBox {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 10px 0px;
+    border-radius: 25px;
+    background-color: rgba(255,255,255,0.05);
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+    align-items: top;
+    justify-content: center;
+}
+
+.charBoxHeader {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.elementBox {
+    display: flex;
+    flex-wrap: wrap;
+    width: 12%;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.elementButton {
+    height: 2vw;
+    width: 100%;
+    margin: 20px 5px 0px;
+    padding: 1px 0px 0px;
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0);
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.1);
+    transition: 0.25s;
+}
+
+.elementChar {
+    width: 100%;
+}
+
+.nameBox {
+    display: flex;
+    flex-wrap: wrap;
+    width: 65%;
+    margin: 20px 1% 0px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(0,0,0,0);
+    align-items: center;
+    justify-content: center;
+}
+
+.nameCharacter {
+    font-size: 20px;
+    color: white;
+}
+
+.changeButtonBox {
+    display: flex;
+    flex-wrap: wrap;
+    width: 12%;
+    border-radius: 10px;
+    align-items: center;
+    justify-content: center;
+}
+
+.changeButton {
+    height: 2vw;
+    width: 100%;
+    margin: 20px 0px 0px;
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0);
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.1);
+    transform: rotate(90deg);
+    font-size: 24px;
+    color: white;
+    transition: 0.25s;
+    cursor: pointer;
+}
+
+.changeButton:hover {
+    transform: rotate(90deg) translateX(5px);
+}
+
+.changeButton:active {
+    transform: rotate(90deg) translateX(25px);
+    opacity: 0;
+}
+
+.imgBox {
+    display: flex;
+    width: 100%;
+    margin: 25px 0px;
+    align-items: center;
+    justify-content: center;
+}
+
+.imgCharacter {
+    width: 75%;
+    border-radius: 10px;
+}
+
+.talentsBox {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    height: 7.5vw;
+    width: 75%;
+    margin: 25px 0px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(0,0,0,0.5);
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+    align-items: top;
+    justify-content: center;
+}
+
+.talentsHeaderBox {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.talentsLeftHeader {
+    display: flex;
+    flex-wrap: wrap;
+    width: 45%;
+    margin: 0px 2.5px;
+    border-radius: 5px;
+    background-color: black;
+    align-items: center;
+    justify-content: center;
+}
+
+.talentsRightHeader {
+    display: flex;
+    flex-wrap: wrap;
+    width: 45%;
+    margin: 0px 2.5px;
+    border-radius: 5px;
+    background-color: black;
+    align-items: center;
+    justify-content: center;
+}
+
+.talentsHeader {
+    font-size: 14px;
+    color: white;
+}
+
+.talentLevelCurrent {
+    width: 15%;
+    margin: 0px 25px;
+    border: none;
+    border-radius: 25px;
+    background-color: black;
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    caret-color: transparent;
+}
+
+.talentLevelTarget {
+    width: 15%;
+    margin: 0px 25px;
+    border: none;
+    border-radius: 25px;
+    background-color: black;
+    font-size: 18px;
+    color: white;
+    text-align: center;
+    caret-color: transparent;
+}
+
+.normalBox {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.imgNormal {
+    width: 15%;
+}
+
+.skillBox {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.imgSkill {
+    width: 15%;
+}
+
+.burstBox {
+    display: flex;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.imgBurst {
+    width: 15%;
+}
+
+.referenceBox {
+    display: flex;
+    flex-wrap: wrap;
+    width: 60%;
+    height: 100%;
+    padding: 25px;
+    align-items: center;
+    justify-content: center;
+}
+
+.domainBox {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 90%;
+    margin: 10px 0px;
+    border-radius: 25px;
+    background-color: rgba(255,255,255,0.05);
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+.domainImageBox {
+    display: flex;
+    width: 100%;
+    margin: 25px 0px;
+    align-items: center;
+    justify-content: center;
+}
+
+.headerDomain {
+    display: flex;
+    flex-wrap: wrap;
+    width: 65%;
+    margin: 20px 1% 0px;
+    border: none;
+    border-radius: 10px;
+    background-color: rgba(255,255,255,0.05);
+    align-items: center;
+    justify-content: center;
+}
+
+.nameDomain {
+    font-size: 24px;
+    color: white;
+}
+
+.imgDomain {
+    width: 75%;
+    border-radius: 10px;
+}
+
+.inventoryBox {
+    display: flex;
+    flex-wrap: wrap;
+    width: 90%;
+    align-items: center;
+    justify-content: center;
+}
+
+.philoBoxStar {
+    opacity: 0;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0)), url('resources/Talent Books/star-3.webp');
+    background-size: 75%;
+    background-position-x: 50px;
+    background-position-y: -15px;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 20%;
+    margin: 10px 25px;
+    padding: 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: rgba(0,0,0,0.5);
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+    align-items: left;
+    justify-content: center;
+}
+
+.guideBoxStar {
+    opacity: 0;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0)), url('resources/Talent Books/star-2.webp');
+    background-size: 75%;
+    background-position-x: 50px;
+    background-position-y: -15px;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 20%;
+    margin: 10px 25px;
+    padding: 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: rgba(0,0,0,0.5);
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+    align-items: left;
+    justify-content: center;
+}
+
+.teachBoxStar {
+    opacity: 0;
+    background-image: radial-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0)), url('resources/Talent Books/star-1.webp');
+    background-size: 75%;
+    background-position-x: 50px;
+    background-position-y: -15px;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 20%;
+    margin: 10px 25px;
+    padding: 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: rgba(0,0,0,0.5);
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+    align-items: left;
+    justify-content: center;
+}
+
+.philoBoxStarMain {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0)), url('resources/Talent Books/star-3.webp');
+    background-size: 75%;
+    background-position-x: 50px;
+    background-position-y: -15px;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 20%;
+    margin: 10px 25px;
+    padding: 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: rgba(0,0,0,0.5);
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+    align-items: left;
+    justify-content: center;
+}
+
+.guideBoxStarMain {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0)), url('resources/Talent Books/star-2.webp');
+    background-size: 75%;
+    background-position-x: 50px;
+    background-position-y: -15px;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 20%;
+    margin: 10px 25px;
+    padding: 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: rgba(0,0,0,0.5);
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+    align-items: left;
+    justify-content: center;
+}
+
+.teachBoxStarMain {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0)), url('resources/Talent Books/star-1.webp');
+    background-size: 75%;
+    background-position-x: 50px;
+    background-position-y: -15px;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 20%;
+    margin: 10px 25px;
+    padding: 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: rgba(0,0,0,0.5);
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+    align-items: left;
+    justify-content: center;
+}
+
+.philoBoxFreedom {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0)), url('resources/Talent Books/freedom-3.webp');
+    background-size: 75%;
+    background-position-x: 50px;
+    background-position-y: -15px;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 20%;
+    margin: 10px 25px;
+    padding: 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: rgba(0,0,0,0.5);
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+    align-items: left;
+    justify-content: center;
+}
+
+.guideBoxFreedom {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0)), url('resources/Talent Books/freedom-2.webp');
+    background-size: 75%;
+    background-position-x: 50px;
+    background-position-y: -15px;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 20%;
+    margin: 10px 25px;
+    padding: 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: rgba(0,0,0,0.5);
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+    align-items: left;
+    justify-content: center;
+}
+
+.teachBoxFreedom {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0)), url('resources/Talent Books/freedom-1.webp');
+    background-size: 75%;
+    background-position-x: 50px;
+    background-position-y: -15px;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 20%;
+    margin: 10px 25px;
+    padding: 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: rgba(0,0,0,0.5);
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+    align-items: left;
+    justify-content: center;
+}
+
+.philoBoxResistance {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0)), url('resources/Talent Books/resistance-3.webp');
+    background-size: 75%;
+    background-position-x: 50px;
+    background-position-y: -15px;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 20%;
+    margin: 10px 25px;
+    padding: 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: rgba(0,0,0,0.5);
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+    align-items: left;
+    justify-content: center;
+}
+
+.guideBoxResistance {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0)), url('resources/Talent Books/resistance-2.webp');
+    background-size: 75%;
+    background-position-x: 50px;
+    background-position-y: -15px;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 20%;
+    margin: 10px 25px;
+    padding: 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: rgba(0,0,0,0.5);
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+    align-items: left;
+    justify-content: center;
+}
+
+.teachBoxResistance {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0)), url('resources/Talent Books/resistance-1.webp');
+    background-size: 75%;
+    background-position-x: 50px;
+    background-position-y: -15px;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 20%;
+    margin: 10px 25px;
+    padding: 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: rgba(0,0,0,0.5);
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+    align-items: left;
+    justify-content: center;
+}
+
+.philoBoxBallad {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0)), url('resources/Talent Books/ballad-3.webp');
+    background-size: 75%;
+    background-position-x: 50px;
+    background-position-y: -15px;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 20%;
+    margin: 10px 25px;
+    padding: 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: rgba(0,0,0,0.5);
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+    align-items: left;
+    justify-content: center;
+}
+
+.guideBoxBallad {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0)), url('resources/Talent Books/ballad-2.webp');
+    background-size: 75%;
+    background-position-x: 50px;
+    background-position-y: -15px;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 20%;
+    margin: 10px 25px;
+    padding: 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: rgba(0,0,0,0.5);
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+    align-items: left;
+    justify-content: center;
+}
+
+.teachBoxBallad {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0)), url('resources/Talent Books/ballad-1.webp');
+    background-size: 75%;
+    background-position-x: 50px;
+    background-position-y: -15px;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 20%;
+    margin: 10px 25px;
+    padding: 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: rgba(0,0,0,0.5);
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+    align-items: left;
+    justify-content: center;
+}
+
+.philoBoxProsperity {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0)), url('resources/Talent Books/prosperity-3.webp');
+    background-size: 75%;
+    background-position-x: 50px;
+    background-position-y: -15px;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 20%;
+    margin: 10px 25px;
+    padding: 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: rgba(0,0,0,0.5);
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+    align-items: left;
+    justify-content: center;
+}
+
+.guideBoxProsperity {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0)), url('resources/Talent Books/prosperity-2.webp');
+    background-size: 75%;
+    background-position-x: 50px;
+    background-position-y: -15px;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 20%;
+    margin: 10px 25px;
+    padding: 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: rgba(0,0,0,0.5);
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+    align-items: left;
+    justify-content: center;
+}
+
+.teachBoxProsperity {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0)), url('resources/Talent Books/prosperity-1.webp');
+    background-size: 75%;
+    background-position-x: 50px;
+    background-position-y: -15px;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 20%;
+    margin: 10px 25px;
+    padding: 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: rgba(0,0,0,0.5);
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+    align-items: left;
+    justify-content: center;
+}
+
+.philoBoxDiligence {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0)), url('resources/Talent Books/diligence-3.webp');
+    background-size: 75%;
+    background-position-x: 50px;
+    background-position-y: -15px;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 20%;
+    margin: 10px 25px;
+    padding: 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: rgba(0,0,0,0.5);
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+    align-items: left;
+    justify-content: center;
+}
+
+.guideBoxDiligence {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0)), url('resources/Talent Books/diligence-2.webp');
+    background-size: 75%;
+    background-position-x: 50px;
+    background-position-y: -15px;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 20%;
+    margin: 10px 25px;
+    padding: 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: rgba(0,0,0,0.5);
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+    align-items: left;
+    justify-content: center;
+}
+
+.teachBoxDiligence {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0)), url('resources/Talent Books/diligence-1.webp');
+    background-size: 75%;
+    background-position-x: 50px;
+    background-position-y: -15px;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 20%;
+    margin: 10px 25px;
+    padding: 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: rgba(0,0,0,0.5);
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+    align-items: left;
+    justify-content: center;
+}
+
+.philoBoxGold {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0)), url('resources/Talent Books/gold-3.webp');
+    background-size: 75%;
+    background-position-x: 50px;
+    background-position-y: -15px;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 20%;
+    margin: 10px 25px;
+    padding: 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: rgba(0,0,0,0.5);
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+    align-items: left;
+    justify-content: center;
+}
+
+.guideBoxGold {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0)), url('resources/Talent Books/gold-2.webp');
+    background-size: 75%;
+    background-position-x: 50px;
+    background-position-y: -15px;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 20%;
+    margin: 10px 25px;
+    padding: 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: rgba(0,0,0,0.5);
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+    align-items: left;
+    justify-content: center;
+}
+
+.teachBoxGold {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0)), url('resources/Talent Books/gold-1.webp');
+    background-size: 75%;
+    background-position-x: 50px;
+    background-position-y: -15px;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 20%;
+    margin: 10px 25px;
+    padding: 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: rgba(0,0,0,0.5);
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+    align-items: left;
+    justify-content: center;
+}
+
+.philoBoxTransience {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0)), url('resources/Talent Books/transience-3.webp');
+    background-size: 75%;
+    background-position-x: 50px;
+    background-position-y: -15px;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 20%;
+    margin: 10px 25px;
+    padding: 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: rgba(0,0,0,0.5);
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+    align-items: left;
+    justify-content: center;
+}
+
+.guideBoxTransience {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0)), url('resources/Talent Books/transience-2.webp');
+    background-size: 75%;
+    background-position-x: 50px;
+    background-position-y: -15px;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 20%;
+    margin: 10px 25px;
+    padding: 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: rgba(0,0,0,0.5);
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+    align-items: left;
+    justify-content: center;
+}
+
+.teachBoxTransience {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0)), url('resources/Talent Books/transience-1.webp');
+    background-size: 75%;
+    background-position-x: 50px;
+    background-position-y: -15px;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 20%;
+    margin: 10px 25px;
+    padding: 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: rgba(0,0,0,0.5);
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+    align-items: left;
+    justify-content: center;
+}
+
+.philoBoxElegance {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0)), url('resources/Talent Books/elegance-3.webp');
+    background-size: 75%;
+    background-position-x: 50px;
+    background-position-y: -15px;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 20%;
+    margin: 10px 25px;
+    padding: 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: rgba(0,0,0,0.5);
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+    align-items: left;
+    justify-content: center;
+}
+
+.guideBoxElegance {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0)), url('resources/Talent Books/elegance-2.webp');
+    background-size: 75%;
+    background-position-x: 50px;
+    background-position-y: -15px;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 20%;
+    margin: 10px 25px;
+    padding: 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: rgba(0,0,0,0.5);
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+    align-items: left;
+    justify-content: center;
+}
+
+.teachBoxElegance {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0)), url('resources/Talent Books/elegance-1.webp');
+    background-size: 75%;
+    background-position-x: 50px;
+    background-position-y: -15px;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 20%;
+    margin: 10px 25px;
+    padding: 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: rgba(0,0,0,0.5);
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+    align-items: left;
+    justify-content: center;
+}
+
+.philoBoxLight {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0)), url('resources/Talent Books/light-3.webp');
+    background-size: 75%;
+    background-position-x: 50px;
+    background-position-y: -15px;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 20%;
+    margin: 10px 25px;
+    padding: 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: rgba(0,0,0,0.5);
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+    align-items: left;
+    justify-content: center;
+}
+
+.guideBoxLight {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0)), url('resources/Talent Books/light-2.webp');
+    background-size: 75%;
+    background-position-x: 50px;
+    background-position-y: -15px;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 20%;
+    margin: 10px 25px;
+    padding: 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: rgba(0,0,0,0.5);
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+    align-items: left;
+    justify-content: center;
+}
+
+.teachBoxLight {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0)), url('resources/Talent Books/light-1.webp');
+    background-size: 75%;
+    background-position-x: 50px;
+    background-position-y: -15px;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 20%;
+    margin: 10px 25px;
+    padding: 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: rgba(0,0,0,0.5);
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+    align-items: left;
+    justify-content: center;
+}
+
+.philoBoxAdmonition {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0)), url('resources/Talent Books/admonition-3.webp');
+    background-size: 75%;
+    background-position-x: 50px;
+    background-position-y: -15px;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 20%;
+    margin: 10px 25px;
+    padding: 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: rgba(0,0,0,0.5);
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+    align-items: left;
+    justify-content: center;
+}
+
+.guideBoxAdmonition {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0)), url('resources/Talent Books/admonition-2.webp');
+    background-size: 75%;
+    background-position-x: 50px;
+    background-position-y: -15px;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 20%;
+    margin: 10px 25px;
+    padding: 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: rgba(0,0,0,0.5);
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+    align-items: left;
+    justify-content: center;
+}
+
+.teachBoxAdmonition {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0)), url('resources/Talent Books/admonition-1.webp');
+    background-size: 75%;
+    background-position-x: 50px;
+    background-position-y: -15px;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 20%;
+    margin: 10px 25px;
+    padding: 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: rgba(0,0,0,0.5);
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+    align-items: left;
+    justify-content: center;
+}
+
+.philoBoxIngenuity {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0)), url('resources/Talent Books/Ingenuity-3.webp');
+    background-size: 75%;
+    background-position-x: 50px;
+    background-position-y: -15px;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 20%;
+    margin: 10px 25px;
+    padding: 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: rgba(0,0,0,0.5);
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+    align-items: left;
+    justify-content: center;
+}
+
+.guideBoxIngenuity {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0)), url('resources/Talent Books/Ingenuity-2.webp');
+    background-size: 75%;
+    background-position-x: 50px;
+    background-position-y: -15px;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 20%;
+    margin: 10px 25px;
+    padding: 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: rgba(0,0,0,0.5);
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+    align-items: left;
+    justify-content: center;
+}
+
+.teachBoxIngenuity {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0)), url('resources/Talent Books/Ingenuity-1.webp');
+    background-size: 75%;
+    background-position-x: 50px;
+    background-position-y: -15px;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 20%;
+    margin: 10px 25px;
+    padding: 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: rgba(0,0,0,0.5);
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+    align-items: left;
+    justify-content: center;
+}
+
+.philoBoxPraxis {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0)), url('resources/Talent Books/Praxis-3.webp');
+    background-size: 75%;
+    background-position-x: 50px;
+    background-position-y: -15px;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 20%;
+    margin: 10px 25px;
+    padding: 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: rgba(0,0,0,0.5);
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+    align-items: left;
+    justify-content: center;
+}
+
+.guideBoxPraxis {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0)), url('resources/Talent Books/Praxis-2.webp');
+    background-size: 75%;
+    background-position-x: 50px;
+    background-position-y: -15px;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 20%;
+    margin: 10px 25px;
+    padding: 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: rgba(0,0,0,0.5);
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+    align-items: left;
+    justify-content: center;
+}
+
+.teachBoxPraxis {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.25), rgba(0, 0, 0, 0)), url('resources/Talent Books/Praxis-1.webp');
+    background-size: 75%;
+    background-position-x: 50px;
+    background-position-y: -15px;
+    background-repeat: no-repeat;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 20%;
+    margin: 10px 25px;
+    padding: 20px;
+    border: none;
+    border-radius: 50px;
+    background-color: rgba(0,0,0,0.5);
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+    align-items: left;
+    justify-content: center;
+}
+
+.inputPhilosophies {
+    width: 50%;
+    margin: 10px 0px;
+    border: none;
+    border-radius: 25px;
+    background-color: rgba(0,0,0,1);
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    caret-color: transparent;
+    cursor: default;
+}
+
+.inputGuides {
+    width: 50%;
+    margin: 10px 0px;
+    border: none;
+    border-radius: 25px;
+    background-color: rgba(0,0,0,1);
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    caret-color: transparent;
+    cursor: default;
+}
+
+.inputTeachings {
+    width: 50%;
+    margin: 10px 0px;
+    border: none;
+    border-radius: 25px;
+    background-color: rgba(0,0,0,1);
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    caret-color: transparent;
+    cursor: default;
+}
+
+.inputPhilosophiesMain {
+    width: 50%;
+    margin: 10px 0px;
+    border: none;
+    border-radius: 25px;
+    background-color: rgba(0,0,0,1);
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    caret-color: transparent;
+}
+
+.inputGuidesMain {
+    width: 50%;
+    margin: 10px 0px;
+    border: none;
+    border-radius: 25px;
+    background-color: rgba(0,0,0,1);
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    caret-color: transparent;
+}
+
+.inputTeachingsMain {
+    width: 50%;
+    margin: 10px 0px;
+    border: none;
+    border-radius: 25px;
+    background-color: rgba(0,0,0,1);
+    font-size: 24px;
+    color: white;
+    text-align: center;
+    caret-color: transparent;
+}
+
+.resultsBox {
+    display: flex;
+    flex-wrap: wrap;
+    width: 20%;
+    height: 100%;
+    padding: 25px 0px;
+    align-items: center;
+    justify-content: center;
+}
+
+.requiredBox {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 65%;
+    border-radius: 25px;
+    background-color: rgba(255,255,255,0.05);
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+.requiredPhilosophiesBox {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 30%;
+    margin: 10px 0px;
+    align-items: center;
+    justify-content: center;
+}
+
+.requiredPhilosophiesBox1 {
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 10px 0px;
+    align-items: center;
+    justify-content: center;
+}
+
+.requiredPhilosophiesBox2 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 10px 0px;
+    align-items: center;
+    justify-content: center;
+}
+
+.requiredPhilosophiesBox3 {
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 10px 0px;
+    align-items: center;
+    justify-content: center;
+}
+
+.requiredGuidesBox {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 30%;
+    margin: 10px 0px;
+    align-items: center;
+    justify-content: center;
+}
+
+.requiredGuidesBox1 {
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 10px 0px;
+    align-items: center;
+    justify-content: center;
+}
+
+.requiredGuidesBox2 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 10px 0px;
+    align-items: center;
+    justify-content: center;
+}
+
+.requiredGuidesBox3 {
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 10px 0px;
+    align-items: center;
+    justify-content: center;
+}
+
+.requiredTeachingsBox {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 30%;
+    margin: 10px 0px;
+    align-items: center;
+    justify-content: center;
+}
+
+.requiredTeachingsBox1 {
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 10px 0px;
+    align-items: center;
+    justify-content: center;
+}
+
+.requiredTeachingsBox2 {
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 10px 0px;
+    align-items: center;
+    justify-content: center;
+}
+
+.requiredTeachingsBox3 {
+    opacity: 0;
+    display: flex;
+    flex-direction: column;
+    flex-wrap: wrap;
+    width: 100%;
+    margin: 10px 0px;
+    align-items: center;
+    justify-content: center;
+}
+
+.requiredPhilosophies {
+    width: 100%;
+}
+
+.requiredGuides {
+    width: 100%;
+}
+
+.requiredTeachings {
+    width: 100%;
+}
+
+.philoReqLabel {
+    font-size: 20px;
+    color: white;
+}
+
+.guideReqLabel {
+    font-size: 20px;
+    color: white;
+}
+
+.teachReqLabel {
+    font-size: 20px;
+    color: white;
+}
+
+.domainRunBox {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    height: 30%;
+    align-items: center;
+    justify-content: center;
+}
+
+.runBoxHeader {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.resultMessage {
+    font-size: 32px;
+    color: white;
+}
+
+.domainRun {
+    display: flex;
+    flex-wrap: wrap;
+    width: 100%;
+    border-radius: 25px;
+    background-color: rgba(255,255,255,0.05);
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.5);
+    align-items: center;
+    justify-content: center;
+}
+
+.calcResult {
+    font-size: 20px;
+    color: white;
+}

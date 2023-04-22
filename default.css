@@ -1,0 +1,162 @@
+* {
+    box-sizing: border-box;
+}
+
+html {
+    font-family: 'Trebuchet MS', sans-serif;
+}
+
+body {
+    background-image: radial-gradient(rgba(0, 0, 0, 0.1), rgba(0, 0, 0, 0.5)), url('resources/webpage/genshin-bg.jpg');
+    background-position-x: 50%;
+    background-position-y: 75%;
+    background-attachment: fixed;
+	width: 99%;
+	min-height: 100vh;
+}
+
+a:hover {
+    text-decoration: none;
+}
+
+a:active {
+    text-decoration: none;
+}
+
+/* HIDE ARROW ON NUMBER INPUT BOX */
+input::-webkit-outer-spin-button,
+input::-webkit-inner-spin-button {
+  -webkit-appearance: none;
+  margin: 0;
+}
+
+input[type=number] {
+  -moz-appearance: textfield;
+}
+/* END */
+
+/* CHANGE HIGHLIGHT CURSOR COLOR */
+::selection {
+  background: white; /* WebKit/Blink Browsers */
+  color: black;
+}
+
+::-moz-selection {
+  background: white; /* Gecko Browsers */
+  color: black;
+}
+/* END */
+
+.crumbBox {
+    display: flex;
+    flex-wrap: wrap;
+    width: 9%;
+    margin: 0.5% 1%;
+    padding: 0.5% 0.5%;
+    border-radius: 5px;
+    background-color: rgba(0,0,0,1);
+    align-items: center;
+    justify-content: center;
+    float: left;
+}
+
+.logoTitle {
+    font-size: 16px;
+    font-weight: bold;
+    color: white;
+}
+
+.logoIcon {
+    height: 16px;
+    width: 16px;
+    position: relative;
+    top: 3px;
+}
+
+.navBar {
+    display: flex;
+    flex-wrap: wrap;
+    height: 3vw;
+    width: 85%;
+    margin: 0% 2%;
+    padding: 0% 1%;
+    border-radius: 25px;
+    background-color: rgba(0,0,0,0.5);
+    align-items: center;
+    justify-content: center;
+    float: right;
+}
+
+.navBox {
+    display: flex;
+    flex-wrap: wrap;
+    height: 3vw;
+    width: 97.5%;
+    margin: 0% 0%;
+    padding: 0% 0%;
+    align-items: center;
+    justify-content: left;
+    float: center;
+}
+
+.navDivider {
+    display: inline;
+    position: relative;
+    top: -3px;
+    margin: 0px 0px;
+    font-size: 36px;
+    font-weight: bold;
+    color: rgba(255,255,255,0.25);
+}
+
+.navButton {
+    height: 3vw;
+    width: 10%;
+    margin: 0px 0px;
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0.05);
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.1);
+    font-size: 24px;
+    color: lightgrey;
+    transition: 0.1s;
+    cursor: pointer;
+}
+
+.navButton:hover {
+    transform: scale(1.05);
+    color: white;
+}
+
+.navButton:active {
+    transform: scale(0.99);
+    color: white;
+}
+
+.navCurrent {
+    height: 3vw;
+    width: 10%;
+    margin: 0px 0px;
+    border: none;
+    border-radius: 50%;
+    background-color: rgba(0,0,0,0.05);
+    box-shadow: 0px 10px 20px 0px rgba(0,0,0,0.1);
+    font-size: 24px;
+    font-weight: bold;
+    color: white;
+}
+
+.bgBox {
+    display: flex;
+    flex-wrap: wrap;
+    height: 42.5vw;
+    width: 90%;
+    position: relative;
+    top: 25px;
+    margin: 0.5% 5%;
+    padding: 0.25% 2.5%;
+    border-radius: 25px;
+    background-color: rgba(0,0,0,0.25);
+    align-items: center;
+    justify-content: left;
+}
